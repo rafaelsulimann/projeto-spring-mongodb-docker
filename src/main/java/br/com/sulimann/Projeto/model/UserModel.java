@@ -1,8 +1,11 @@
-package br.com.sulimann.Projeto.domain;
+package br.com.sulimann.Projeto.model;
 
 import java.io.Serializable;
 
-public class User implements Serializable {
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "user")
+public class UserModel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -10,10 +13,10 @@ public class User implements Serializable {
     private String name;
     private String email;
 
-    public User(){
+    public UserModel(){
     }
 
-    public User(String id, String name, String email) {
+    public UserModel(String id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -59,7 +62,7 @@ public class User implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        User other = (User) obj;
+        UserModel other = (UserModel) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
