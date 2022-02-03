@@ -1,10 +1,10 @@
-package br.com.sulimann.projectspringbootnosqlmongodb;
+package br.com.sulimann.ApplicationTests;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProjectSpringbootNosqlMongodbApplicationTests {
+class ApplicationTest {
 
 	@Test
 	void contextLoads() {
