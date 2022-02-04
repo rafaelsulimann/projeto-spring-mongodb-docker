@@ -1,10 +1,10 @@
 package br.com.sulimann.Projeto.services.exceptions;
 
-public class ObjectNotFoundException extends RuntimeException {
+public class NotFoundException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    public ObjectNotFoundException(String msg){
+    public NotFoundException(String msg){
         super(msg);
     }
     
