@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import br.com.sulimann.Projeto.dto.UserDTO;
+import br.com.sulimann.Projeto.model.PostModel;
 import br.com.sulimann.Projeto.model.UserModel;
 import br.com.sulimann.Projeto.services.UserService;
 
@@ -61,4 +62,11 @@ public class UserResource {
         newObj = service.update(id, newObj);
         return ResponseEntity.ok().body(newObj);
     }
+
+    @GetMapping(value = "/{id}/posts")
+    public ResponseEntity<List<PostModel>> findPosts(@PathVariable String id){
+        UserModel obj = service.findById(id);
+        return ResponseEntity.ok().body(obj.getPosts());
+    }
+
 }
