@@ -1,8 +1,11 @@
 package br.com.sulimann.Projeto.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user")
@@ -14,6 +17,9 @@ public class UserModel implements Serializable {
     private String id;
     private String name;
     private String email;
+
+    @DBRef(lazy = true)
+    private List<PostModel> posts = new ArrayList<>();
 
     public UserModel(){
     }
@@ -46,6 +52,14 @@ public class UserModel implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<PostModel> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(List<PostModel> posts) {
+        this.posts = posts;
     }
 
     @Override
