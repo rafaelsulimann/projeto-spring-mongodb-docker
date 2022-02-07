@@ -1,12 +1,17 @@
 package br.com.sulimann.Projeto.model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.com.sulimann.Projeto.dto.AuthorDTO;
+import br.com.sulimann.Projeto.dto.CommentDTO;
 
 @Document (collection = "post")
 public class PostModel implements Serializable {
@@ -15,16 +20,20 @@ public class PostModel implements Serializable {
 
     @Id
     private String id;
-    private Date date;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
+    private Instant date;
+    
     private String title;
     private String body;
 
     private AuthorDTO author;
+    private List<CommentDTO> comments = new ArrayList<>();
 
     public PostModel(){
     }
 
-    public PostModel(String id, Date date, String title, String body, AuthorDTO author) {
+    public PostModel(String id, Instant date, String title, String body, AuthorDTO author) {
         this.id = id;
         this.date = date;
         this.title = title;
@@ -40,11 +49,11 @@ public class PostModel implements Serializable {
         this.id = id;
     }
 
-    public Date getDate() {
+    public Instant getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(Instant date) {
         this.date = date;
     }
 
@@ -70,6 +79,14 @@ public class PostModel implements Serializable {
 
     public void setAuthor(AuthorDTO author) {
         this.author = author;
+    }
+
+    public List<CommentDTO> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentDTO> comments) {
+        this.comments = comments;
     }
 
     @Override
