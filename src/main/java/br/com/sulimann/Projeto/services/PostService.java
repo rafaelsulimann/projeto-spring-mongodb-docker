@@ -1,5 +1,6 @@
 package br.com.sulimann.Projeto.services;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,5 +24,10 @@ public class PostService {
 
     public List<PostModel> findByTitle(String text){
         return repository.searchTitle(text);
+    }
+
+    public List<PostModel> fullSearch(String text, Date minDate, Date maxDate){
+        maxDate = new Date(maxDate.getTime() + 24 * 60 * 60 * 1000);
+        return repository.fullSearch(text, minDate, maxDate);
     }
 }
