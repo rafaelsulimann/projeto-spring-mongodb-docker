@@ -16,6 +16,10 @@ public class PostService {
 
     @Autowired
     private PostRepository repository;
+
+    public List<PostModel> findAll(){
+        return repository.findAll();
+    }
     
     public PostModel findById(String id){
         Optional<PostModel> obj = repository.findById(id);

@@ -2,6 +2,7 @@ package br.com.sulimann.Projeto.resources;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.sulimann.Projeto.dto.PostDTO;
 import br.com.sulimann.Projeto.model.PostModel;
 import br.com.sulimann.Projeto.resources.util.URL;
 import br.com.sulimann.Projeto.services.PostService;
@@ -21,6 +23,13 @@ public class PostResource {
     
     @Autowired
     private PostService service;
+
+    @GetMapping
+    public ResponseEntity<List<PostDTO>> findAll(){
+        List<PostModel> list = service.findAll(); 
+        List<PostDTO> listDTO = list.stream().map(x -> new PostDTO(x)).collect(Collectors.toList());       
+        return ResponseEntity.ok().body(listDTO);
+    }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<PostModel> findById(@PathVariable String id) {
