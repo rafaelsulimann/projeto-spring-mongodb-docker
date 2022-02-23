@@ -1,0 +1,25 @@
+language: java
+jdk:
+  - oraclejdk19
+services: mongodb
+before_install:
+  - sudo apt-get update
+  - cd app/
+  - echo "Let's start maven package"
+  - mvn clean package
+  - docker build -t spring-mongo .
+  - docker tag spring-mongo:latest rafaelsulimann/spring-mongo:$TRAVIS_JOB_ID;
+  - cd ..
+  - echo "We are in root dir"
+script:
+  - docker-compose build
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+deploy:
+  provider: script
+  script:
+    - docker push rafaelsulimann/spring-mongo:$TRAVIS_JOB_ID;
+  on:
+    branch: main
+notifications:
+  email: false

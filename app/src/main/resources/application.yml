@@ -1,6 +1,6 @@
+server:
+  port: 8080 
 spring:
-  server:
-    port: 8080 
   data:
     mongodb:
       uri: ${MONGODB_URI:mongodb://localhost:27017/project-springboot-nosql-mongodb}
