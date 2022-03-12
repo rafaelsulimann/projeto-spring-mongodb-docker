@@ -35,11 +35,11 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 - **FIND ALL** (filtrar todos)
     - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/)
 - **FIND BY ID** (filtrar por ID)
-    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/)<IDPOST>
+    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/){IDPOST}
 - **FIND ALL COMMENT** (filtrar comentários de um post)
-    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/)<IDPOST>/comments
+    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/){IDPOST}/comments
 - **FIND COMMENT BY ID** (filtrar comentário por ID)
-    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/)<IDPOST>/<IDCOMMENT>
+    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/){IDPOST}/{IDCOMMENT}
 
 ### POST
 
@@ -102,7 +102,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 
 - **DELETE POST** (deletar um POST)
     - Para deletar um **POST** basta inserimos o **ENDPOINT** abaixo:
-    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/)<IDPOST>
+    - [https://projeto-springboot-nosql-mongo.herokuapp.com/posts/](https://projeto-springboot-nosql-mongo.herokuapp.com/posts/){IDPOST}
     - Depois inserir a **REQUISIÇÃO** do tipo **DELETE** e apertar **SEND**.
     
     ![Untitled9](https://user-images.githubusercontent.com/97992737/158035210-5f953408-6307-4889-ae43-c47bc88e17da.png)
@@ -125,9 +125,9 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 - **FIND ALL** (filtrar todos)
     - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users
 - **FIND BY ID** (filtrar por ID)
-    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/<IDUSER>
+    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/{IDUSER}
 - **FIND POSTS BY USER** (filtrar os POSTS de um USUÁRIO)
-    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/<IDUSER>/posts
+    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/{IDUSER}/posts
 
 ### POST
 
@@ -146,7 +146,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 ### PUT
 
 - Para atualizar um **USER,** basta inserirmos as informações que desejamos atualizar do específico usuário e enviar via **REQUISIÇÃO** do tipo **PUT** no seguinte **ENDPOINT**:
-    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/<IDUSER>
+    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/{IDUSER}
     
     ```java
     {
@@ -159,7 +159,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 ### DELETE
 
 - Para deletar um **USER**, basta inserirmos o **ENDPOINT** com o **ID** do **USER** que desejamos deletar:
-    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/<IDUSER>
+    - [https://spring-postgresql-restfull.herokuapp.com/](https://spring-postgresql-restfull.herokuapp.com/)users/{IDUSER}
     
     ![Untitled14](https://user-images.githubusercontent.com/97992737/158035343-09bce139-7436-4c91-b181-bbcf4dbb75f3.png)
     
@@ -208,38 +208,33 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 
 4 . **DATA MÍNIMA + DATA MÁXIMA**
 
-```java
-https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12&maxDate=2022-03-12
-```
-
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4ad823ae-8446-40fd-8203-31a1c5d95d2b/Untitled.png)
+    ```java
+    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12&maxDate=2022-03-12
+    ```
+    ![Untitled22](https://user-images.githubusercontent.com/97992737/158036017-4a1d0f0e-8eaa-4850-ada8-c73ad6271d57.png)
 
 1. **DATA MÍNIMA**
     
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12
     ```
-    
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ff84556d-fcd2-4193-9bb1-46ff3bc0edf8/Untitled.png)
+    ![Untitled23](https://user-images.githubusercontent.com/97992737/158036040-0c528ead-9504-4f75-a203-e5b938846e54.png)
     
 2. **DATA MÁXIMA**
     
     ```java
-    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?maxDate=2022-01-12
-    ```
+    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?maxDate=2022-01-12    ```
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e472ce46-c3be-4166-90f0-a4bf56681d16/Untitled.png)
+    ![Untitled24](https://user-images.githubusercontent.com/97992737/158036196-7c5e2f5c-7c93-4758-be1e-c2ef7581667d.png)
     
     **OBS:***** No exemplo acima inserimos uma **DATA MÁXIMA** que não tem nenhum post criado de forma **PROPOSITAL** para verificar o que iria **RETORNAR** caso não houvesse nenhum post na data especificada.
     
 3. **TEXTO**
     
     ```java
-    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=partiu
-    ```
+    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=partiu    ```
     
-    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/81211c06-0c39-4b65-9f6b-96160eafd8ea/Untitled.png)
-    
+    ![Untitled25](https://user-images.githubusercontent.com/97992737/158036215-145dc48d-a056-4803-a4b5-55efffd7f8ab.png)
 
 # DOCKERFILE, DOCKER COMPOSE E TRAVIS CI
 
