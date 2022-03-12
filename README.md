@@ -216,10 +216,10 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12&maxDate=2022-03-12
     ```
-    
-    ![Untitled22](https://user-images.githubusercontent.com/97992737/158036017-4a1d0f0e-8eaa-4850-ada8-c73ad6271d57.png)
 
-1. **DATA MÍNIMA**
+![Untitled22](https://user-images.githubusercontent.com/97992737/158036363-edb5dd35-62a1-48e5-87e5-2bcec47f3c6e.png)
+
+5. **DATA MÍNIMA**
     
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12
@@ -227,7 +227,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     
     ![Untitled23](https://user-images.githubusercontent.com/97992737/158036040-0c528ead-9504-4f75-a203-e5b938846e54.png)
     
-2. **DATA MÁXIMA**
+6. **DATA MÁXIMA**
     
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?maxDate=2022-01-12    
@@ -237,7 +237,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     
     **OBS:***** No exemplo acima inserimos uma **DATA MÁXIMA** que não tem nenhum post criado de forma **PROPOSITAL** para verificar o que iria **RETORNAR** caso não houvesse nenhum post na data especificada.
     
-3. **TEXTO**
+7. **TEXTO**
     
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=partiu    
