@@ -136,6 +136,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     
     ![Untitled12](https://user-images.githubusercontent.com/97992737/158035273-7bc916ba-5d5f-42c3-97de-ba65d7ac5bb9.png)
     
+    
     ```java
     {
         "name": "Rafael Sulimann",
@@ -154,6 +155,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
         "email": "rafael@gmail.com"
     }
     ```
+    
     ![Untitled13](https://user-images.githubusercontent.com/97992737/158035303-1ea7409f-e3f3-4161-845b-84d594002b1d.png)
 
 ### DELETE
@@ -174,7 +176,8 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/titlesearch?text=bom%20dia
-    ```    
+    ``` 
+    
     ![Untitled15](https://user-images.githubusercontent.com/97992737/158035359-8dc5744d-b6e4-415a-b1e3-0a5bec78284f.png)
     
     - Repare que quando digitamos o **“BOM DIA”** nós inserimos ao invés de **ESPAÇO EM BRANCO** um **“%20”**, isso acontece pois precisamos **ENCODAR** o texto e quando inserirmos o espaços em branco nós precisaremos inserir o %20 no lugar.
@@ -188,6 +191,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=bom%20dia&maxDate=2022-03-12
     ```
+    
     ![Untitled16](https://user-images.githubusercontent.com/97992737/158035386-e686d787-95a7-4d69-9d66-499530d4031c.png)    
     
 2. **TEXTO + DATA MÍNIMA**
@@ -195,6 +199,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=bom%20dia&minDate=2022-03-12
     ```
+    
     ![Untitled17](https://user-images.githubusercontent.com/97992737/158035404-7f7f81bf-308b-49cf-ace5-1dd2da59d2f3.png)    
     
 3. **TEXTO + DATA MÍNIMA + DATA MÁXIMA**
@@ -211,6 +216,7 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12&maxDate=2022-03-12
     ```
+    
     ![Untitled22](https://user-images.githubusercontent.com/97992737/158036017-4a1d0f0e-8eaa-4850-ada8-c73ad6271d57.png)
 
 1. **DATA MÍNIMA**
@@ -218,12 +224,14 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
     ```java
     https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?minDate=2022-01-12
     ```
+    
     ![Untitled23](https://user-images.githubusercontent.com/97992737/158036040-0c528ead-9504-4f75-a203-e5b938846e54.png)
     
 2. **DATA MÁXIMA**
     
     ```java
-    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?maxDate=2022-01-12    ```
+    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?maxDate=2022-01-12    
+    ```
     
     ![Untitled24](https://user-images.githubusercontent.com/97992737/158036196-7c5e2f5c-7c93-4758-be1e-c2ef7581667d.png)
     
@@ -232,7 +240,8 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 3. **TEXTO**
     
     ```java
-    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=partiu    ```
+    https://projeto-springboot-nosql-mongo.herokuapp.com/posts/fullsearch?text=partiu    
+    ```
     
     ![Untitled25](https://user-images.githubusercontent.com/97992737/158036215-145dc48d-a056-4803-a4b5-55efffd7f8ab.png)
 
