@@ -11,7 +11,6 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import br.com.sulimann.Projeto.dto.AuthorDTO;
-import br.com.sulimann.Projeto.dto.CommentDTO;
 
 @Document (collection = "post")
 public class PostModel implements Serializable {
@@ -19,7 +18,7 @@ public class PostModel implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String id;
+    private String idPost;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant date;
@@ -28,25 +27,25 @@ public class PostModel implements Serializable {
     private String body;
 
     private AuthorDTO author;
-    private List<CommentDTO> comments = new ArrayList<>();
+    private List<CommentModel> comments = new ArrayList<>();
 
     public PostModel(){
     }
 
-    public PostModel(String id, Instant date, String title, String body, AuthorDTO author) {
-        this.id = id;
+    public PostModel(String idPost, Instant date, String title, String body, AuthorDTO author) {
+        this.idPost = idPost;
         this.date = date;
         this.title = title;
         this.body = body;
         this.author = author;
     }
 
-    public String getId() {
-        return id;
+    public String getIdPost() {
+        return idPost;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdPost(String idPost) {
+        this.idPost = idPost;
     }
 
     public Instant getDate() {
@@ -81,19 +80,27 @@ public class PostModel implements Serializable {
         this.author = author;
     }
 
-    public List<CommentDTO> getComments() {
+    public List<CommentModel> getComments() {
         return comments;
     }
 
-    public void setComments(List<CommentDTO> comments) {
+    public void setComments(List<CommentModel> comments) {
         this.comments = comments;
+    }
+
+    public void addComment(CommentModel comment) {
+        comments.add(comment);
+    }
+
+    public void removeComment(CommentModel comment) {
+        comments.remove(comment);
     }
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + ((idPost == null) ? 0 : idPost.hashCode());
         return result;
     }
 
@@ -106,10 +113,10 @@ public class PostModel implements Serializable {
         if (getClass() != obj.getClass())
             return false;
         PostModel other = (PostModel) obj;
-        if (id == null) {
-            if (other.id != null)
+        if (idPost == null) {
+            if (other.idPost != null)
                 return false;
-        } else if (!id.equals(other.id))
+        } else if (!idPost.equals(other.idPost))
             return false;
         return true;
     }

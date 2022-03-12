@@ -8,9 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import br.com.sulimann.Projeto.dto.AuthorDTO;
-import br.com.sulimann.Projeto.dto.CommentDTO;
+import br.com.sulimann.Projeto.model.CommentModel;
 import br.com.sulimann.Projeto.model.PostModel;
 import br.com.sulimann.Projeto.model.UserModel;
+import br.com.sulimann.Projeto.repository.CommentRepository;
 import br.com.sulimann.Projeto.repository.PostRepository;
 import br.com.sulimann.Projeto.repository.UserRepository;
 
@@ -22,6 +23,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private PostRepository postRepository;
+
+    @Autowired
+    private CommentRepository commentRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -41,13 +45,14 @@ public class TestConfig implements CommandLineRunner {
         PostModel post1 = new PostModel(null, Instant.now(), "Partiu viagem", "Vou viajar para São Paulo. Abraços!", new AuthorDTO(maria));
         PostModel post2 = new PostModel(null, Instant.now(), "Bom dia", "Acordei feliz hoje!", new AuthorDTO(maria));
 
-        CommentDTO c1 = new CommentDTO("Boa viagem mano!", Instant.now(), new AuthorDTO(alex));
-        CommentDTO c2 = new CommentDTO("Aproveite!", Instant.now(), new AuthorDTO(bob));
-        CommentDTO c3 = new CommentDTO("Tenha um ótimo dia!", Instant.now(), new AuthorDTO(alex));
+        CommentModel c1 = new CommentModel(null, "Boa viagem mano!", Instant.now(), new AuthorDTO(alex));
+        CommentModel c2 = new CommentModel(null, "Aproveite!", Instant.now(), new AuthorDTO(bob));
+        CommentModel c3 = new CommentModel(null, "Tenha um ótimo dia!", Instant.now(), new AuthorDTO(alex));
+
+        commentRepository.saveAll(Arrays.asList(c1, c2, c3));
 
         post1.getComments().addAll(Arrays.asList(c1, c2));
         post2.getComments().addAll(Arrays.asList(c3));
-
 
         postRepository.saveAll(Arrays.asList(post1, post2));
 
