@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/rafaelsulimann/spring-mongodb-dockerfile-dockercompose.svg?branch=main)](https://app.travis-ci.com/rafaelsulimann/spring-mongodb-dockerfile-dockercompose)
+[![Build Status](https://app.travis-ci.com/rafaelsulimann/projeto-spring-mongodb-docker.svg?branch=main)](https://app.travis-ci.com/rafaelsulimann/projeto-spring-mongodb-docker)
 # API RESTFULL COM BANCO MONGODB, IMPLEMENTAÇÃO DE DOCKER, DOCKER COMPOSE E CI/CD USANDO TRAVIS CI
 
 ## INTRODUÇÃO
