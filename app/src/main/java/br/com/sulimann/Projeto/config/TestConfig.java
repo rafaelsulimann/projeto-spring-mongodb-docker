@@ -35,6 +35,7 @@ public class TestConfig implements CommandLineRunner {
 
         userRepository.deleteAll();
         postRepository.deleteAll();
+        commentRepository.deleteAll();
 
         UserModel maria = new UserModel(null, "Maria Brown", "maria@gmail.com");
         UserModel alex = new UserModel(null, "Alex Green", "alex@gmail.com");
